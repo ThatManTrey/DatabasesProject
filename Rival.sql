@@ -1,4 +1,5 @@
 /*
+Example data for inventory display:
 insert into product values (12345678, 'item', 'hypo', 10, 10);
 insert into location values (1234, 'Willys', '123 idgaf ave', '1234567890');
 insert into inventory values (1234, 12345678, 666);

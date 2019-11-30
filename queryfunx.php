@@ -1,4 +1,5 @@
 <?php
+	/*Contains all functions for performing queries*/
 	function showInventory($conn, $store)
 	{
 		$sql = "SELECT SKU, p_name, p_type, price, p_size, no_item FROM inventory NATURAL JOIN product WHERE storenum = ?";

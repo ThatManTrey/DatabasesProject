@@ -19,7 +19,7 @@ drop table if exists distributor;
 create table distributor
 	(dist_ID	numeric(4,0) not null,
 	 d_name		varchar(15),
-	 address	varchar(30),
+	 address	varchar(50),
 	 phone		varchar(10),
 	 primary key (dist_ID)
 	);
@@ -34,7 +34,7 @@ drop table if exists location;
 create table location
 	(storenum	numeric(4,0) not null,
 	 l_name		varchar(20),
-	 address	varchar(30),
+	 address	varchar(50),
 	 phone		varchar(10),
 	 primary key (storenum)
 	);

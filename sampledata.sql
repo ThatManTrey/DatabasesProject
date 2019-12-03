@@ -7,6 +7,19 @@ insert into product values (55555555, 'crackers', 'food', 2, 10);
 insert into product values (66666666, 'donut', 'food', 2, 10);
 insert into product values (77777777, 'monster', 'food', 2, 10);
 insert into product values (88888888, 'gas', 'gasoline', 2, 10);
+insert into products values ('12121212', 'Busch', 'CAN', 8.99, 12);
+insert into products values ('13131313', 'Budweiser', 'CAN', 10.99, 12);
+insert into products values ('14141414', 'Busch', 'CAN', 17.99, 30);
+insert into products values ('15151515', 'Bud Light', 'CAN', 18.99, 24);
+insert into products values ('16161616', 'Michelob', 'NR', 15.99, 12);
+insert into products values ('17171717', 'Heineken', 'NR', 9.99, 12);
+insert into products values ('18181818', 'Coors', 'NR', 7.49, 6);
+insert into products values ('19191919', 'Coors', 'CAN', 10.99, 12);
+insert into products values ('21212121', 'Coors', 'NR', 11.49, 12);
+insert into products values ('23232323', 'Busch', 'CAN', 1.69, 1);
+insert into products values ('24242424', 'Miller Lite', 'CAN', 10.99, 12);
+insert into products values ('25252525', 'Genessee', 'CAN', 4.49, 6);
+
 insert into distributor values (1234, 'Deer Park', '23 Proctor Street Thomasville, NC 27360', '3301234567');
 insert into distributor values (1111, 'Tyson', '525 Lawrence Street Emporia, KS 66801', '3301111111');
 insert into distributor values (2222, 'Extra', '9609 South Oakwood Court Summerfield, FL 34491', '3302222222');
@@ -16,13 +29,16 @@ insert into distributor values (5555, 'Ritz', '24 Superior Street Franksville, N
 insert into distributor values (6666, 'Lerch', '11 Strong Street Wooster, OH 44691', '3306666666');
 insert into distributor values (7777, 'Monster', '111 Burch Street Townsville, NY 11360', '3307777777');
 insert into distributor values (8888, 'Ohio Gas', '39 Proctor Street Thomasville, NC 27360', '3308888888');
+
 insert into employee values (1234, 'Jaden', '10');
 insert into employee values (1111, 'Jake', '10');
 insert into employee values (2222, 'Trey', '10');
 insert into employee values (3333, 'Amjad', '10');
+
 insert into location values (1234, 'Stark Sales', '889 Stadelman Ave Akron, OH, 44320', '3303303301');
 insert into location values (1111, 'Holmes Sales', '128 Cherry Ave Berlin, OH, 44681', '3303303302');
 insert into location values (2222, 'Wayne Sales', '512 Bosch Street Wooster, OH, 44320', '3303303303');
+
 insert into inventory values (1111, 11111111, 100);
 insert into inventory values (1111, 22222222, 100);
 insert into inventory values (1111, 33333333, 100);
@@ -35,6 +51,7 @@ insert into inventory values (3333, 12345678, 100);
 insert into inventory values (3333, 11111111, 100);
 insert into inventory values (3333, 44444444, 100);
 insert into inventory values (3333, 66666666, 100);
+
 insert into orders values ('54321', 1234, 2222);
 insert into orders values ('54322', 1111, 2222);
 insert into orders values ('54323', 2222, 2222);
@@ -44,10 +61,12 @@ insert into orders values ('66668', 5555, 1234);
 insert into orders values ('55555', 6666, 1111);
 insert into orders values ('55556', 7777, 1111);
 insert into orders values ('55557', 8888, 1111);
+
 insert into employees values (1234, 1111, 'Manager');
 insert into employees values (1111, 1234, 'Manager');
 insert into employees values (2222, 1234, 'Manager');
 insert into employees values (3333, 2222, 'Manager');
+
 insert into order_amount values ('54321', 11111111, 100);
 insert into order_amount values ('54322', 22222222, 100);
 insert into order_amount values ('54323', 33333333, 100);

@@ -94,4 +94,36 @@
 		$sql = "UPDATE inventory SET no_item = (no_item - 1) WHERE sku = $SKU";
 		$conn->query($sql);
 	}
+	function showSearch($conn, $store, $sku)
+	{
+		$sql = "SELECT SKU, p_name, p_type, price, p_size, no_item FROM inventory NATURAL JOIN products WHERE storenum = $store AND SKU = $sku";
+		$statement = $conn->prepare($sql);
+		$statement->execute();
+		$result = $statement->get_result();
+		
+		if ($result->num_rows > 0) {
+			echo '<table border>';
+			echo '<thead><tr>';
+			echo '<th>SKU</th><th>Name</th><th>Type</th><th>Price</th><th>p_size</th><th>no_item</th>';
+			echo '</tr></thead>';
+			echo '<tbody>';
+
+			while($row = $result->fetch_assoc()) {
+				echo '<tr>';
+				echo "<td>".$row["SKU"]."</td>";
+				echo "<td>".$row["p_name"]."</td>";
+				echo "<td>".$row["p_type"]."</td>";
+				echo "<td>".$row["price"]."</td>";
+				echo "<td>".$row["p_size"]."</td>";
+				echo "<td>".$row["no_item"]."</td>";
+				echo '</tr>';
+			}
+			
+			echo '</tbody>';
+			echo '</table>';
+		} 
+		else {
+			echo "0 results";
+		}
+	}
 ?>

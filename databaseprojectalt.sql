@@ -70,7 +70,7 @@ create table order_amount
 	(ordernum	varchar(5),
 	 SKU		numeric(8,0),
 	 no_item	numeric(10,0),
-	 primary key (ordernum),
+	 primary key (ordernum, SKU),
 	 foreign key (ordernum) references orders(ordernum),
 	 foreign key (SKU) references products(SKU)
 	);

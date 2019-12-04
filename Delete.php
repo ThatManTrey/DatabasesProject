@@ -10,16 +10,16 @@
  
 <?php
      
-    require("tableshow.php");
+    require("dbconnect.php");
     require("queryfunx.php");            
        
  
-    $storenum = $_POST['storenum'];
-	$SKU = $_POST['SKU'];
+    $storenum = $_COOKIE['store'];
+	$SKU = $_GET['SKU'];
  
            
     echo " <br> Inventory before deletion <br>";
-    showInventory($conn, $store);
+    showInventory($conn, $storenum);
    
     $sql = "DELETE FROM inventory WHERE storenum = $storenum AND SKU = $SKU";
            
@@ -33,14 +33,11 @@
     echo "Entered data successfully\n";
            
     echo " <br> Inventory after deletion <br>";
-    showInventory($conn, $store);
+    showInventory($conn, $storenum);
            
     mysqli_close($conn);    
  
 ?>
-   <hr width="50">
-<a href="Frontpage.html" style="color:red;font-weight:bold;">Home</a>
-<hr width="50">
-   </div>
+<a href="landing.html">Home</a>
 </body>
 </html>

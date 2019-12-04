@@ -10,12 +10,12 @@
 	require("queryfunx.php"); 
 	require("dbconnect.php");            
         
-  $storenum = $_POST['storenum'];
-  $SKU = $_POST['SKU'];
-	$no_item = $_POST['no_item'];
+	$storenum = $_COOKIE['store'];
+	$SKU = $_GET['SKU'];
+	$no_item = $_GET['no_item'];
 			
 	echo " <br> Inventory before adding to it<br>";
-	showInventory($conn, $store);
+	showInventory($conn, $storenum);
    
     $sql = "INSERT INTO Inventory "."(storenum,SKU, no_item) "."VALUES ".
                "('$storenum','$SKU','$no_item')";
@@ -29,14 +29,13 @@
     echo "Entered data successfully\n";
 			
 	echo " <br>  Inventory after adding to it<br>";
-	showInventory($conn, $store);
+	showInventory($conn, $storenum);
 			
-    mysqli_close($conn);    
+    mysqli_close($conn);
 
 ?>
-   <hr width="50">
-<a href="Frontpage.html" style="color:red;font-weight:bold;">Home</a>
-<hr width="50">
+
+<a href="landing.html">Home</a>
    </div>
 </body>
 </html>

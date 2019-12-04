@@ -37,6 +37,7 @@
 			echo "0 results";
 		}
 	}
+	
 	function showOrders($conn, $store)
 	{
 		$sql = "SELECT ordernum, dist_ID, SKU, no_item FROM orders NATURAL JOIN order_amount WHERE storenum = ?";
@@ -72,6 +73,7 @@
 			echo "0 results";
 		}
 	}
+	
 	function makeOrderItem($conn, $store, $order, $d_id, $sku, $amnt)
 	{
 		if ($order=='none')
@@ -82,9 +84,9 @@
 				$sql = "SELECT COUNT(1) FROM orders WHERE ordernum = '".$order."'";
 				$result = $conn->query($sql);
 			} while ($result == "1");
+			$sql = "INSERT INTO orders VALUES (".$order.",".$d_id.",".$store.")";
+			$conn->query($sql);
 		}
-		$sql = "INSERT INTO orders VALUES (".$order.",".$d_id.",".$store.")";
-		$conn->query($sql);
 		$sql = "INSERT INTO order_amount VALUES (".$order.",".$sku.",".$amnt.")";
 		$conn->query($sql);
 	}

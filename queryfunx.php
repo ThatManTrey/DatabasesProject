@@ -90,4 +90,8 @@
 		$sql = "INSERT INTO order_amount VALUES (".$order.",".$sku.",".$amnt.")";
 		$conn->query($sql);
 	}
+	function sellItem($conn, $store, $SKU) {
+		$sql = "UPDATE inventory SET no_item = (no_item - 1) WHERE sku = $SKU";
+		$conn->query($sql);
+	}
 ?>

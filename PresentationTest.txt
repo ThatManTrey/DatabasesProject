@@ -1,0 +1,20 @@
+Load up /xampp/htdocs/site in browser using http://localhost/site/
+
+Login with Store 1234 & ID 1234
+Display Inventory
+Order from Distributor
+	Water		-> SKU 22222222 Amount 100 Distributor ID 1234 Order none
+		see that order number is randomly generated
+	Miller Lite	-> SKU 24242424 Amount 100 Distributor ID 3333 Order 66666
+		here, order number is given
+Add items to Inventory
+	Heineken	-> SKU 17171717 Quantity 100
+Search Product
+	Heineken	-> SKU 17171717
+Delete items from Inventory
+	chicken		-> SKU 11111111
+		notice chicken is no longer in inventory
+POS Sale
+	lottery ticket	-> SKU 44444444
+		notice no_item went down by 1
+Logout

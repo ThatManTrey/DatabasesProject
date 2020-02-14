@@ -1,0 +1,44 @@
+Possible points: 100
+Deadline: November 12th, Tuesday, 11:59 PM
+ 
+Identify functional dependencies on the obtained relational schemas from the task2, considering real-world practices.                       [30 points]
+Based on the defined functional dependencies,                                                                                                                                        [40 points]  
+ identify the schemas that are in BCNF Also explain why others are not in BCNF.
+ identify the schemas that are in 3NF Also explain why others are not in 3NF.
+[use the online tool]                                                                                                                                        
+ 
+Covert all non-3NF relational schemas into 3NF and submit the final list of 3NF relational schemas. [Use the online tool]                 [30 points]
+
+Store No. -> Name, Address, Phone
+Dist. ID -> Name, Address, Phone
+ID -> Name, pay
+SKU -> Name, Type, Price, Size
+Store No., SKU -> No. of Item
+Order No. -> Store No., Dist. ID
+Order No., SKU -> No. of Item
+Store No., ID -> Role
+
+BCNF:
+Product
+Distributor
+Employee
+Location
+Inventory
+Employees
+
+3NF:
+Product
+Distributor
+Employee
+Location
+Inventory
+Employees
+
+Not in BCNF:
+Order
+-OrderNo -> Store No, Dist ID violates BCNF as Order No is not superkey for table
+
+Not in 3NF:
+Order
+-Order No -> Store No, Dist ID violates 3NF as Order No is not superkey for table and DistID, Store No is a set of non-key attributes
+-Gives us tables Order(Order No., Dist. ID, Store No.) and Order_Amounts(Order No., SKU, No. of Item) instead of Order(Order No., SKU, Store No., Dist. ID, No. of Item)
